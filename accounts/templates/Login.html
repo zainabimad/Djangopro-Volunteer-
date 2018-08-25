@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+              <link href="{% static '/css/style.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+
+{% block body %}
+{% if msg %}
+ <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{msg}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ {% endif %}
+
+<form   method="POST"  >
+    {% csrf_token %}
+
+
+
+     اسم المستخدم:
+    <input type="text" name="username" title="اسم المستخدم"/><br> <br> <br>
+    كلمة المرور :
+    <input type="password" name="password" title="كلمة السر "/>  <br> <br> <br>
+    تسجيل الدخول:
+    <input type="submit" name="login" title="تسجيل الدخول"/>
+
+
+</form>
+  {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% extends 'Index.html'  %}
+      {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+{% for i in det %}
+<h3> title :{{i.title}}</h3>
+<h3> info:  {{i.info}}</h3>
+
+<h3> up_date:{{i.up_date}} </h3>
+<h3> uploader{{i.uploader}} </h3>
+
+
+{% endfor %}
+
+
+
+
+    {% endblock %}
+
+
+</body>
+</html>

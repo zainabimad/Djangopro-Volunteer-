@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'Index.html' %}
+    {% load static %}
+
+        <link href="{% static '/css/style.css' %}" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+</head>
+<body class="cont" >
+ {% block body %}
+
+ <form method="POST">
+{% csrf_token %}
+     {{ form.as_p}}
+
+     <button type="submit"> تم التعديل </button>
+    </form>
+
+    {% endblock %}
+
+
+</body>
+</html>

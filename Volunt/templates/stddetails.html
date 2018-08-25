@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% extends 'Index.html'  %}
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+{% for s in lis %}
+<h3> الاسم الكامل :{{s.name}}</h3>
+<h3> : العمر  {{s.age}}</h3>
+<h3>{{s.birthdate}}: تار يخ الميلاد</h3>
+<h3>{{s.city}}: المدينة </h3>
+<h3>{{s.email}}: البريد الالكتروني </h3>
+
+
+
+<form method="POST">
+    {% csrf_token %}
+      <input type="submit" value="حذف" />
+    </form>
+  <button onclick = "location.href = '{%  url  'edit' s.id  %}' ">  تعديل</button>
+
+{% endfor %}
+
+
+
+
+    {% endblock %}
+
+
+</body>
+</html>

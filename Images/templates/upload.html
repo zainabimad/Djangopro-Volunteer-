@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'Index.html'  %}
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<center>
+<form method="POST" class="custom-file" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{form.as_p}}
+            <button type="submit" class="btn-dark" style="width:7%" > رفع</button>
+
+</form>
+
+    </center>
+{% endblock %}
+</body>
+</html>

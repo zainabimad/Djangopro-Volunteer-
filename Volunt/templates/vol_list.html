@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'Index.html'  %}
+     {% load static %}
+        <link href="{% static '/css/style.css' %}" rel="stylesheet">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+ {% block body %}
+ <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col">ID</th>
+
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+        <th scope="col">Email</th>
+
+
+      <th scope="col">Birthdate</th>
+        <th scope="col">City</th>
+        <th scope="col">Study</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in voln %}
+    <tr>
+              <td>{{i.id}}</td>
+
+        <td><a href="{{i.id}}" >{{i.name}}</a></td>
+      <td>{{i.age}}</td>
+        <td>{{i.email}}</td>
+
+      <td>{{i.birthdate}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.study}}</td>
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+
+    {% endblock %}
+
+</body>
+</html>
